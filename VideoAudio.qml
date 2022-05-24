@@ -7,7 +7,6 @@ Item {
     id: root
 
     required property MediaPlayer mediaPlayer
-    //property bool muted: false
     property real volume: volumeSlider.value/100.
 
     implicitHeight: buttons.height
@@ -24,7 +23,7 @@ Item {
             RoundButton {
                 id: muteButton
                 radius: 50.0
-                text: "\u1F508"
+                text: String.fromCodePoint(0x1F50A)//"\u1F50A"
             }
         }
 

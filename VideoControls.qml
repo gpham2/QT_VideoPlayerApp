@@ -2,6 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtMultimedia
+import QtQuick.Window 2.15
 
 Item {
     id: root
@@ -11,27 +12,13 @@ Item {
     property int toggle: loopToggle.position
     property alias volume: videoAudio.volume
 
-    height: frame.height
-    width: frame.width
-
-    Frame {
-        id: frame
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-
-        background: Rectangle {
-            color: "white"
-        }
-
         ColumnLayout {
             id: playbackControlPanel
-            anchors.fill: parent
-            anchors.leftMargin: 10
-            anchors.rightMargin: 10
-
+            Layout.preferredWidth: Screen.width
             VideoSlider {
-                Layout.fillWidth: true
+                Layout.leftMargin: 15
+                Layout.rightMargin: 15
+                Layout.preferredWidth: Screen.width - 30
                 mediaPlayer: root.mediaPlayer
             }
 
@@ -46,10 +33,14 @@ Item {
             RowLayout {
 
                 id: controlButtons
-
+                Layout.alignment: Qt.AlignCenter
+                Layout.rightMargin: loopToggle.width
+                Layout.leftMargin: VideoAudio.width
+                spacing: (Screen.width - 393) <= 0 ? 0: (Screen.width - 393)/16.9
 
                 VideoAudio {
                     id: videoAudio
+                    Layout.leftMargin: 10;
                     Layout.minimumWidth: 100
                     Layout.maximumWidth: 150
                     Layout.fillWidth: true
@@ -57,10 +48,7 @@ Item {
 
                 }
 
-                Layout.alignment: Qt.AlignCenter
-                Layout.rightMargin: loopToggle.width
-                Layout.leftMargin: VideoSlider.width
-                spacing: 30
+
 
 
 
@@ -70,13 +58,14 @@ Item {
 
                     Text {
                         text: "\u23F8";
-                        font.pointSize: 35
+                        font.pointSize: Screen.height/40
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
                     onClicked: mediaPlayer.pause()
-                    Layout.preferredWidth: 100
-                    Layout.preferredHeight: 100
+
+                    Layout.preferredWidth: Screen.height/13
+                    Layout.preferredHeight: Screen.height/13
 
 
                 }
@@ -86,13 +75,13 @@ Item {
                     radius: 300.0
                     Text {
                         text: "\u25B6"
-                        font.pointSize: 35
+                        font.pointSize: Screen.height/40
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
                     onClicked: mediaPlayer.play()
-                    Layout.preferredWidth: 100
-                    Layout.preferredHeight: 100
+                    Layout.preferredWidth: Screen.height/13
+                    Layout.preferredHeight: Screen.height/13
 
 
                 }
@@ -102,13 +91,13 @@ Item {
                     radius: 300.0
                     Text {
                         text: "\u23F9";
-                        font.pointSize: 35
+                        font.pointSize: Screen.height/40
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
                     onClicked: mediaPlayer.stop()
-                    Layout.preferredWidth: 100
-                    Layout.preferredHeight: 100
+                    Layout.preferredWidth: Screen.height/13
+                    Layout.preferredHeight: Screen.height/13
 
                 }
 
@@ -119,14 +108,6 @@ Item {
                     Material.accent: Material.DeepOrange
                     text: "loop"
                 }
-
-
-
-            }
-
-
-
-
         }
     }
 }

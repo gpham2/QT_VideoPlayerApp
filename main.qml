@@ -6,8 +6,8 @@ import QtQuick.Controls
 
 
 Window {
-    width: 640
-    height: 480
+    width: Screen.width
+    height: Screen.height
     visible: true
     color: "white"
 
@@ -15,15 +15,12 @@ Window {
 
 
     VideoFile {
-        y: 100
-        x: 320
+        y: (videoRectangle.y)/2 - (Screen.height/31.4)
+        x: Screen.width/2 - (Screen.height/10)
         id: menuBar
         mediaPlayer: mediaPlayer
         videoOutput: videoOutput
     }
-
-
-
 
 
 
@@ -52,7 +49,11 @@ Window {
             anchors.fill: parent
 
         }
-
+    }
+    Rectangle {
+        id: controlRectangle
+        anchors.top: videoRectangle.bottom
+        width: Screen.width - 1
         VideoControls {
             id: videoControls
 
@@ -65,13 +66,6 @@ Window {
 
 
     }
-
-
-
-
-
-
-
     Component.onCompleted: mediaPlayer.play()
 }
 

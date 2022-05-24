@@ -34,10 +34,13 @@ Item {
     RowLayout {
         anchors.fill: parent
         id: rowFile
+
         RoundButton {
             id: fileBtn
-            Layout.preferredWidth: Screen.width/3.5
-            Layout.preferredHeight: Screen.width/10
+            //Layout.preferredWidth: Screen.width/3.5
+            //Layout.preferredHeight: Screen.width/10
+            Layout.preferredWidth: Screen.height/5
+            Layout.preferredHeight: Screen.height/15.7
             onClicked: promptDialog()
             background: Rectangle {
                     color: "orange"
@@ -48,7 +51,8 @@ Item {
                 color: "white"
                 font.family: "Helvetica"
                 font.bold: true
-                font.pointSize: 40
+                font.pointSize: Screen.height/32
+                //font.pointSize: 40
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
             }

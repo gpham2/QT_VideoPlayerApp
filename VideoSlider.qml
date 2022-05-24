@@ -2,6 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 2.15
 import QtQuick.Layouts
 import QtMultimedia
+import QtQuick.Window 2.15
 
 Item {
     id: root
@@ -16,7 +17,7 @@ Item {
 
 
         Slider {
-            id: videoSlider
+            id: videoSlider 
             Layout.fillWidth: true
             enabled: mediaPlayer.seekable
             value: mediaPlayer.position / mediaPlayer.duration
