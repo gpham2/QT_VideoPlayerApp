@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>VideoControls.qml</file>
+        <file>VideoSlider.qml</file>
+        <file>VideoAudio.qml</file>
+        <file>VideoFile.qml</file>
+    </qresource>
+</RCC>
