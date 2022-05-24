@@ -20,3 +20,6 @@ Possible Next Steps:
     -Figure out how PowerManager.WakeLock works for QML to prevent device sleeping
     -Tests on more devices to make sure the dynamic resizing works for all
     -Possibily combine the pause and play button into one
+    
+    
+Sample Video: https://youtu.be/uwk06hcnEEQ
