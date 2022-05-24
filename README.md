@@ -1,6 +1,6 @@
-Created with QML on QT Creator 7.0.1 (community)
-Android Qt 6.3.0 Clang x86 kit was used for creation
-Emulators Pixel_3a and Pixel_C were used during testing
+Created with QML on QT Creator 7.0.1 (community) <br/>
+Android Qt 6.3.0 Clang x86 kit was used for creation <br/>
+Emulators Pixel_3a and Pixel_C were used during testing <br/>
 
 
 Fuctionality:
