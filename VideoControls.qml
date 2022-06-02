@@ -52,22 +52,29 @@ Item {
 
 
 
-                RoundButton {
+//                RoundButton {
+//                    id: pauseButton
+//                    radius: 300.0
+
+//                    Text {
+//                        text: "\u23F8";
+//                        font.pointSize: Screen.height/40
+//                        anchors.verticalCenter: parent.verticalCenter
+//                        anchors.horizontalCenter: parent.horizontalCenter
+//                    }
+//                    onClicked: mediaPlayer.pause()
+
+//                    Layout.preferredWidth: Screen.height/13
+//                    Layout.preferredHeight: Screen.height/13
+
+//                }
+
+                VideoButton {
                     id: pauseButton
-                    radius: 300.0
-
-                    Text {
-                        text: "\u23F8";
-                        font.pointSize: Screen.height/40
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                    }
+                    displayText: "\u23F8"
                     onClicked: mediaPlayer.pause()
-
                     Layout.preferredWidth: Screen.height/13
                     Layout.preferredHeight: Screen.height/13
-
-
                 }
 
                 RoundButton {
