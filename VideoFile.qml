@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import QtQuick.Controls
 import QtQuick.Dialogs
 import QtQuick.Layouts
 import QtMultimedia
@@ -35,28 +34,39 @@ Item {
         anchors.fill: parent
         id: rowFile
 
-        RoundButton {
+        ButtonComp {
             id: fileBtn
-            //Layout.preferredWidth: Screen.width/3.5
-            //Layout.preferredHeight: Screen.width/10
             Layout.preferredWidth: Screen.height/5
             Layout.preferredHeight: Screen.height/15.7
             onClicked: promptDialog()
-            background: Rectangle {
-                    color: "orange"
-                    radius: 300
-            }
-            Text {
-                text: "Open"
-                color: "white"
-                font.family: "Helvetica"
-                font.bold: true
-                font.pointSize: Screen.height/32
-                //font.pointSize: 40
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
+            baseColor: "orange"
+            displayText: "Open"
+            textSize: Screen.height/32
+            changeColor: false
         }
+
+//        RoundButton {
+//            id: fileBtn
+//            //Layout.preferredWidth: Screen.width/3.5
+//            //Layout.preferredHeight: Screen.width/10
+//            Layout.preferredWidth: Screen.height/5
+//            Layout.preferredHeight: Screen.height/15.7
+//            onClicked: promptDialog()
+//            background: Rectangle {
+//                    color: "orange"
+//                    radius: 300
+//            }
+//            Text {
+//                text: "Open"
+//                color: "white"
+//                font.family: "Helvetica"
+//                font.bold: true
+//                font.pointSize: Screen.height/32
+//                //font.pointSize: 40
+//                anchors.verticalCenter: parent.verticalCenter
+//                anchors.horizontalCenter: parent.horizontalCenter
+//            }
+//        }
 
 
     }
