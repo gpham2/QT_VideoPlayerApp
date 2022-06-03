@@ -7,5 +7,6 @@
         <file>VideoFile.qml</file>
         <file>ButtonComp.qml</file>
         <file>SliderComp.qml</file>
+        <file>SwitchComp.qml</file>
     </qresource>
 </RCC>

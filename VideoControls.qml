@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import QtQuick.Controls
 import QtQuick.Layouts
 import QtMultimedia
 import QtQuick.Window 2.15
@@ -9,7 +8,7 @@ Item {
 
     required property MediaPlayer mediaPlayer
     property int mediaProgress: mediaPlayer.playbackState
-    property int toggle: loopToggle.position
+    property int toggle: loopToggle.checked
     property alias volume: videoAudio.volume
 
 
@@ -40,7 +39,7 @@ Item {
                 VideoAudio {
                     id: videoAudio
                     Layout.leftMargin: 10;
-                    Layout.minimumWidth: 100
+                    Layout.minimumWidth: 30
                     Layout.maximumWidth: 150
                     Layout.fillWidth: true
                     mediaPlayer: root.mediaPlayer
@@ -88,11 +87,24 @@ Item {
                     Layout.preferredHeight: Screen.height/13.5
                 }
 
-                Switch {
+//                Switch {
+//                    id: loopToggle
+//                    Material.accent: Material.DeepOrange
+//                    text: "loop"
+//                }
+                SwitchComp {
                     id: loopToggle
-                    Material.accent: Material.DeepOrange
-                    text: "loop"
+                    Layout.preferredWidth: Screen.height/16
+                    Layout.preferredHeight: Screen.height/32
+
                 }
+//                Text {
+//                    id: loopIcon
+//                    text: "Repeat"//String.fromCodePoint(0x221E) // U+221E or 1F501
+//                    font.pointSize: loopToggle.height/2
+//                    font.family: "Helvetica"
+//                    color: "#FF5722"
+//                }
         }
     }
 }

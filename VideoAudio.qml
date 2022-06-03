@@ -21,7 +21,7 @@ Item {
 
             Rectangle {
                 id: soundIcon
-                implicitWidth: 45
+                implicitWidth: Screen.height/20
                 implicitHeight: implicitWidth
                 radius: implicitWidth/2
                 color: "#E9E9E9"
