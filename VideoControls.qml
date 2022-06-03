@@ -12,6 +12,7 @@ Item {
     property int toggle: loopToggle.position
     property alias volume: videoAudio.volume
 
+
         ColumnLayout {
             id: playbackControlPanel
             Layout.preferredWidth: Screen.width
@@ -26,8 +27,6 @@ Item {
                 height: 20
                 width: parent.width
             }
-
-
 
 
             RowLayout {
@@ -48,10 +47,6 @@ Item {
 
                 }
 
-
-
-
-
 //                RoundButton {
 //                    id: pauseButton
 //                    radius: 300.0
@@ -69,46 +64,29 @@ Item {
 
 //                }
 
-                VideoButton {
+                ButtonComp {
                     id: pauseButton
                     displayText: "\u23F8"
                     onClicked: mediaPlayer.pause()
-                    Layout.preferredWidth: Screen.height/13
-                    Layout.preferredHeight: Screen.height/13
+                    Layout.preferredWidth: Screen.height/13.5
+                    Layout.preferredHeight: Screen.height/13.5
                 }
 
-                RoundButton {
+                ButtonComp {
                     id: playButton
-                    radius: 300.0
-                    Text {
-                        text: "\u25B6"
-                        font.pointSize: Screen.height/40
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                    }
+                    displayText: "\u25B6"
                     onClicked: mediaPlayer.play()
-                    Layout.preferredWidth: Screen.height/13
-                    Layout.preferredHeight: Screen.height/13
-
-
+                    Layout.preferredWidth: Screen.height/13.5
+                    Layout.preferredHeight: Screen.height/13.5
                 }
 
-                RoundButton {
+                ButtonComp {
                     id: stopButton
-                    radius: 300.0
-                    Text {
-                        text: "\u23F9";
-                        font.pointSize: Screen.height/40
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                    }
+                    displayText: "\u23F9"
                     onClicked: mediaPlayer.stop()
-                    Layout.preferredWidth: Screen.height/13
-                    Layout.preferredHeight: Screen.height/13
-
+                    Layout.preferredWidth: Screen.height/13.5
+                    Layout.preferredHeight: Screen.height/13.5
                 }
-
-
 
                 Switch {
                     id: loopToggle

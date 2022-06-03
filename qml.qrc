@@ -5,6 +5,7 @@
         <file>VideoSlider.qml</file>
         <file>VideoAudio.qml</file>
         <file>VideoFile.qml</file>
-        <file>VideoButton.qml</file>
+        <file>ButtonComp.qml</file>
+        <file>SliderComp.qml</file>
     </qresource>
 </RCC>
