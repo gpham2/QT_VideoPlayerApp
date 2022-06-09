@@ -1,24 +1,30 @@
 import QtQuick 2.0
-import QtQuick.Dialogs
 import QtQuick.Layouts
 import QtMultimedia
 import QtQuick.Window 2.15
-
-
+import ChooseFile 1.0
 Item {
     id: root
     required property MediaPlayer mediaPlayer
     required property VideoOutput videoOutput
 
-    FileDialog {
-        id: fileDialog
-        title: "Please choose a file"
-        onAccepted: {
-            mediaPlayer.stop()
-            mediaPlayer.source = fileDialog.currentFile
-            play()
-        }
+
+    ChooseFile{
+        id: chooseFile
+
+
     }
+
+//    FileDialog {
+//        id: fileDialog
+//        title: "Please choose a file"
+//        onAccepted: {
+//            mediaPlayer.stop()
+//            mediaPlayer.source = fileDialog.currentFile
+//            console.log(mediaPlayer.source)
+//            play()
+//        }
+//    }
 
     function play() {
         mediaPlayer.play()
@@ -26,7 +32,14 @@ Item {
 
     function promptDialog () {
         mediaPlayer.stop();
-        fileDialog.open()
+        //fileDialog.open()
+        chooseFile.setMyFile("abc");
+        //console.log(chooseFile.testFile());
+        mediaPlayer.source = chooseFile.readFile();
+        play()
+
+
+
     }
 
 

@@ -2,14 +2,30 @@
 #define CHOOSEFILE_H
 
 
-class ChooseFile
+#include <QObject>
+#include <QDir>
+#include <qqml.h>
+#include <QDebug>
+#include <QtQml/qqmlregistration.h>
+
+
+class ChooseFile : public QObject
 {
+    Q_OBJECT
+    Q_PROPERTY(QUrl file READ readFile WRITE setMyFile)
+    QML_ELEMENT
+
 public:
-    ChooseFile();
+    explicit ChooseFile(QObject *parent = nullptr);
+    Q_INVOKABLE QUrl readFile();
+    Q_INVOKABLE void setMyFile(const QUrl &file);
 
 
+signals:
+    //void fileChanged();
 
 private:
+    QUrl m_test;
 
 };
 

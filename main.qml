@@ -3,7 +3,6 @@ import QtQuick.Window 2.15
 import QtMultimedia
 
 
-
 Window {
     width: Screen.width
     height: Screen.height
